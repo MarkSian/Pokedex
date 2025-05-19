@@ -14,5 +14,7 @@ export const generations = [
 // *to make sure we start from the right pokemon, we will do offest + 1 as the first ID is 1. *min = offset + 1
 // Generation I starts from 1, Generation II starts from 152
 // limit: will tell us how many pokemons to fetch in reference to their generation.
-// max = offset + limit. ex: Generation I has 151 pokemons, so max = 0 + 151 = 151. Thus, capturing all pokemons from that generation. 
+// max = offset + limit. ex: Generation I has 151 pokemons, so max = 0 + 151 = 151. Thus, capturing all pokemons from that generation.
 
+// https://pokeapi.co/api/v2/pokemon?limit=151&offset=0
+// we want this to be dynamic, so we will use string literals: `https://pokeapi.co/api/v2/pokemon?limit=${generation.limit}&offset=${generation.offset}` 
