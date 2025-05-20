@@ -11,7 +11,7 @@ export default function Home() {
                 {generations.map((gen) => (
                     <div
                         key={gen.id}
-                        className="card-xl cursor-pointer hover:scale-x-105 hover:scale-y-105 bg-base-100 image-full w-96 shadow-sm flex items-center justify-center"
+                        className="card-xl cursor-pointer hover:bg-gray-100 hover:scale-x-105 hover:scale-y-105 bg-base-100 rounded-lg image-full w-96 shadow-sm flex items-center justify-center"
                         onClick={() => navigate(`/pokedex/${gen.id}`)}
                     >
                         <div className="flex flex-col items-center justify-center p-4 w-full h-full">
@@ -21,7 +21,7 @@ export default function Home() {
                                 className="w-32 h-32 object-contain rounded-lg mb-4"
                             />
                             <h2 className="text-xl font-semibold">{gen.name}</h2>
-                            <p className=''>
+                            <p className='badge badge-outline'>
                                 Pokemon: {gen.offset + 1} - {gen.limit + gen.offset}
                             </p>
 
