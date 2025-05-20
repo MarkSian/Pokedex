@@ -59,10 +59,10 @@ export default function Pokedex() {
         <div className="container mx-auto p-4">
             <div className="flex justify-between items-center mb-6">
                 <button onClick={() => navigate('/')} className="btn btn-primary">Home</button>
-                <h1 className="text-3xl font-bold">{generation.name} Pokédex</h1>
+                <h1 className="text-3xl font-bold">{generation.name} | Pokemons: {generation.offset} - {generation.limit} </h1>
                 <div></div>
             </div>
-            {/* <PokemonGrid pokemonList={pokemonList} /> { /* PokemonGrid is a component that will display the pokemon list */} */}
+            {/* <PokemonGrid pokemonList={pokemonList} /> { /* PokemonGrid is a component that will display the pokemon list */}
         </div>
 
     )
