@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { generations } from "../utils/pokemonData";
+import PokemonGrid from "../components/PokemonGrid";
 import axios from "axios";
 
 export default function Pokedex() {
@@ -62,7 +63,7 @@ export default function Pokedex() {
                 <h1 className="text-3xl font-bold">{generation.name} | Pokemons: {generation.offset} - {generation.limit} </h1>
                 <div></div>
             </div>
-            {/* <PokemonGrid pokemonList={pokemonList} /> { /* PokemonGrid is a component that will display the pokemon list */}
+            <PokemonGrid pokemonList={pokemonList} />
         </div>
 
     )
