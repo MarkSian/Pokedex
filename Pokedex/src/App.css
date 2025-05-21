@@ -1,9 +1,23 @@
 @import "tailwindcss";
 @plugin "daisyui";
-
-
 #root {
   max-width: 1280px;
   margin: 0 auto;
   text-align: center;
 }
+
+@keyframes breathe {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.07);
+  }
+}
+
+.breathe {
+  animation: breathe 2s ease-in-out infinite;
+}
+
+
+

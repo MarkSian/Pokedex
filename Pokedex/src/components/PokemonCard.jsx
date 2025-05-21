@@ -9,7 +9,7 @@ export default function PokemonGrid({ pokemon }) {
                     <img
                         src={pokemon.image}
                         alt={pokemon.name}
-                        className="rounded-xl h-24"
+                        className=" rounded-xl h-24 breathe"
                     />
                 </figure>
                 <div className="card-body items-center text-center p-4 shadow-2xl">
