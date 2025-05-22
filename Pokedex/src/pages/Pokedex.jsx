@@ -32,7 +32,7 @@ export default function Pokedex() {
           data.map(async (pokemon, index) => {
             // console.log('pokemon from data.map:', pokemon);
             const details = await axios.get(pokemon.url);
-            // console.log('pokemon from data.map:', details.data);
+            console.log('pokemon from data.map:', details.data);
             return {
               id: generation.offset + index + 1, // index starts from 0, so we add 1
               name: pokemon.name,
