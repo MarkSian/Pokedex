@@ -69,7 +69,8 @@ export default function Pokedex() {
           Home
         </button>
         <h1 className="text-3xl font-bold">
-          {generation.name} | Pokemons: {generation.offset + 1} -
+
+          {generation.name} | Pokemons: {generation.offset + 1} -{" "} {/* empty space needed to space hyphen between both numbers */}
           {generation.limit + generation.offset}
         </h1>
         <div></div>
