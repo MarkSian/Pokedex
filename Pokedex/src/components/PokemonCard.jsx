@@ -40,9 +40,8 @@ export default function PokemonGrid({ pokemon }) {
             {pokemon.types.map((type) => (
               <span
                 key={type}
-                className={`badge capitalize ${
-                  typeColors[type] || "bg-gray-300"
-                }`}
+                className={`badge capitalize ${typeColors[type] || "bg-gray-300"
+                  }`}
               >
                 {type}
               </span>
