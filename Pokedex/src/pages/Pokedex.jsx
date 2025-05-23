@@ -28,6 +28,8 @@ export default function Pokedex() {
         );
         const data = response.data.results;
 
+        // promise.all as there are multiple requests
+        // multiple requests: from data.map
         const detailedPokemon = await Promise.all(
           data.map(async (pokemon, index) => {
             // console.log('pokemon from data.map:', pokemon);
@@ -54,9 +56,7 @@ export default function Pokedex() {
     };
 
     fetchPokemon();
-  }, [genId, generation, navigate]); // genId is the id of the generation we are fetching data for
-  // generation is the object we are fetching data for
-  // navigate is the function to navigate to home page
+  }, [genId, generation, navigate]);
 
   if (loading) return <div className="text-center mt-8">Loading...</div>;
   if (!generation)

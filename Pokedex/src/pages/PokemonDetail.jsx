@@ -25,13 +25,22 @@ export default function PokemonDetail() {
     useEffect(() => {
         const fetchPokemon = async () => {
             try {
+                // response will hold full Pokemon details
                 const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${id}`);
+                // pokemonId will hold the id of the Pokemon
                 const pokemonId = response.data.id;
-                const foundGen = generations.find(gen =>
-                    pokemonId > gen.offset && pokemonId <= gen.offset + gen.limit
-                );
+                // find the generation of the single Pokemon by using find on generations
+                const foundGen = generations.find(gen => {
+                    // console.log('gen:', gen);
+                    // console.log('pokemonId:', pokemonId);
+                    return pokemonId > gen.offset && pokemonId <= gen.offset + gen.limit
 
+                });
+                // console.log('foundGen:', foundGen);
+
+                // setGeneration will set the generation of the Pokemon
                 setGeneration(foundGen);
+                // setPokemon will set the Pokemon details we want to display and use in the components
                 setPokemon({
                     id: pokemonId,
                     name: response.data.name,
@@ -65,6 +74,7 @@ export default function PokemonDetail() {
     return (
         <div className="container mx-auto p-4">
             <div className="flex justify-between mb-6">
+                {/* {if a valid generation exist, then render a button that uses Link to navigate us to the Pokedex Generation that the pokemon belongs too} */}
                 {generation && (
                     <Link to={`/pokedex/${generation.id}`} className="btn btn-primary">
                         Back to {generation.name}
