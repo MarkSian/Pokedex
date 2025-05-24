@@ -31,12 +31,12 @@ export default function PokemonDetail() {
                 const pokemonId = response.data.id;
                 // find the generation of the single Pokemon by using find on generations
                 const foundGen = generations.find(gen => {
-                    // console.log('gen:', gen);
-                    // console.log('pokemonId:', pokemonId);
+                    console.log('gen:', gen);
+                    console.log('pokemonId:', pokemonId);
                     return pokemonId > gen.offset && pokemonId <= gen.offset + gen.limit
 
                 });
-                // console.log('foundGen:', foundGen);
+                console.log('foundGen:', foundGen);
 
                 // setGeneration will set the generation of the Pokemon
                 setGeneration(foundGen);

@@ -32,9 +32,9 @@ export default function Pokedex() {
         // multiple requests: from data.map
         const detailedPokemon = await Promise.all(
           data.map(async (pokemon, index) => {
-            // console.log('pokemon from data.map:', pokemon);
+            console.log('pokemon from data.map:', pokemon);
             const details = await axios.get(pokemon.url);
-            console.log('pokemon from data.map:', details.data);
+            console.log('pokemon details:', details.data);
             return {
               id: generation.offset + index + 1, // index starts from 0, so we add 1
               name: pokemon.name,
@@ -44,9 +44,9 @@ export default function Pokedex() {
           })
         );
         setPokemonList(detailedPokemon);
-        // console.log('full URL Response:', response);
-        // console.log('Data or response.data.results;:', data);
-        // console.log('intended object:', detailedPokemon);
+        console.log('full URL Response:', response);
+        console.log('Data or response.data.results;:', data);
+        console.log('intended object:', detailedPokemon);
 
       } catch (error) {
         console.error("Error fetching pokemon data:", error);
